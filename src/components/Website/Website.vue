@@ -38,8 +38,7 @@
     margin: 0;
     padding: 2px 0;
 }
-.panel,
-.panels{
+.panel{
     background: rgba(255,255,255,0.4) !important;
 }
 </style>

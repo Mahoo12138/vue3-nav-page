@@ -11,9 +11,27 @@
 
             <v-toolbar-title>黄同学的导航</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn dark icon>
-                <v-icon>mdi-share</v-icon>
-            </v-btn>
+            <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                    <v-btn icon v-on="on" @click="toGithub()">
+                        <v-icon>mdi-github</v-icon>
+                    </v-btn>
+                </template>
+                <span>点击查看网站源码</span>
+            </v-tooltip>
+            <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                    <v-btn  icon v-on="on"
+                            v-clipboard:copy="thisUrl"
+                            v-clipboard:success="onCopy"
+                            v-clipboard:error="onError"
+                    >
+                        <v-icon>mdi-share</v-icon>
+                    </v-btn>
+                </template>
+                <span>点击复制网页链接</span>
+            </v-tooltip>
+
         </v-app-bar>
         <v-btn
                 fixed
@@ -31,7 +49,7 @@
                     <v-text-field
                             label="Search"
                             solo
-                            append-icon="mdi-web"
+                            append-icon="mdi-search-web"
                             @click:append="test()"
                     >
                     </v-text-field>
@@ -59,12 +77,22 @@ export default {
   },
 
   data: () => ({
-    //
+      thisUrl: 'https://www.mahoo12138.cn/',
   }),
   methods: {
     test(){
       console.log('search')
-    }
+    },
+    toGithub(){
+      window.open('https://github.com/Mahoo12138/vue3-nav-page')
+    },
+    onCopy(e){
+      console.log(e.text)
+    },
+
+    onError(){
+
+    },
   }
 };
 </script>

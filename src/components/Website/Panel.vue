@@ -11,6 +11,7 @@
                     class="pa-0 ma-2 web-site"
                     outlined
                     tile
+                    @click="toWebSite(item.link)"
             >
                 <div class="web-icon" >
                     <v-avatar>
@@ -33,17 +34,23 @@
     name: "Panel",
     data(){
       return{
-        website: this.webItem.item
+        website: this.webItem.items
       }
     },
     props: {
       webItem:{
         type: Object,
         required: true
-  }
+        }
+    },
+    methods: {
+      toWebSite(url){
+        console.log(url)
+        window.open(url)
+      }
     },
     mounted(){
-      console.log(this.webItem)
+      // console.log(this.webItem)
     }
   }
 </script>
@@ -61,6 +68,7 @@
             flex: 7;padding: 10px 0;
             .web_disc{
                 margin-bottom: 5px;
+                font-size: 14px;
             }
             .web_title{
                 margin: 5px 0 0 0;
