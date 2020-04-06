@@ -33,15 +33,15 @@
             </v-tooltip>
 
         </v-app-bar>
-        <v-btn
-                fixed
-                dark
-                fab
-                color="pink"
-                style="top:85%;right: 3%"
-        >
-            <v-icon>mdi-plus</v-icon>
-        </v-btn>
+<!--        <v-btn-->
+<!--                fixed-->
+<!--                dark-->
+<!--                fab-->
+<!--                color="pink"-->
+<!--                style="top:85%;right: 3%"-->
+<!--        >-->
+<!--            <v-icon>mdi-plus</v-icon>-->
+<!--        </v-btn>-->
         <v-content>
             <v-snackbar
                     v-model="snackbarSwitch"
@@ -88,14 +88,15 @@
         <v-footer
                 color="rgba(0,0,0,0.3)"
                 app
+                dark
         >
-            <span class="px-4">&copy; 2020 </span>
+            <span class="px-4">Copyright &copy; 2020 Mahoo12138</span>
         </v-footer>
     </v-app>
 </template>
 
 <script>
-import Website from "@/components/Website/Website";
+import Website from "@/components/Website/Website"
 export default {
   name: 'App',
   components: {
@@ -155,9 +156,9 @@ export default {
       console.log(e)
     },
   },
-  created(){
+  mounted(){
     this.currentUrl = this.engines[0].url
-  }
+  },
 };
 </script>
 <style>

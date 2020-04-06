@@ -9,10 +9,16 @@ export default [
         "icon": 'https://github.com/favicon.ico'
       },
       {
-        "title": 'Github',
-        "disc": '全球最大的同性交友网站',
-        "link": 'https://github.com/',
-        "icon": 'https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png'
+        "title": 'Bilibili',
+        "disc": '国内最大的同性交友网站',
+        "link": 'https://www.bilibili.com/',
+        "icon": 'https://www.bilibili.com/favicon.ico'
+      },
+      {
+        "title": '腾讯云',
+        "disc": '薅羊毛的主机商之一，域名都在其旗下',
+        "link": 'https://cloud.tencent.com/',
+        "icon": 'https://cloud.tencent.com//favicon.ico'
       },
     ]
   },
@@ -68,18 +74,11 @@ export default [
         "icon": 'https://www.mcbbs.net/favicon.ico'
       },
       {
-        "title": '吾爱破解',
-        "disc": '国内知名安全论坛',
-        "link": 'https://www.52pojie.cn',
-        "icon": 'https://www.52pojie.cn/favicon.ico'
+        "title": 'xda developers',
+        "disc": '国际知名的搞基社区',
+        "link": 'https://forum.xda-developers.com/',
+        "icon": 'https://forum.xda-cdn.com/images/2015/favicons/favicon-196x196.png'
       },
-      {
-        "title": '吾爱破解',
-        "disc": '国内知名安全论坛',
-        "link": 'https://www.52pojie.cn',
-        "icon": 'https://www.52pojie.cn/favicon.ico'
-      },
-
     ]
   },
   {
@@ -92,10 +91,10 @@ export default [
         "icon": 'https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png'
       },
       {
-        "title": '',
-        "disc": '',
-        "link": '',
-        "icon": 'https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png'
+        "title": '鱼C工作室',
+        "disc": '小甲鱼算是我编程的半个启蒙老师吧',
+        "link": 'https://ilovefishc.com/',
+        "icon": 'https://ilovefishc.com/img/favicon.ico'
       }
     ]
   },
@@ -112,7 +111,7 @@ export default [
         "title": "谷歌学术搜索",
         "link": "https://scholar.google.com/",
         "disc": "谷歌学术搜索",
-        "icon": 'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/images/icon/scholar-google.ico'
+        "icon": 'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/images/icons/scholar-google.ico'
       },
       {
         "title": "arxiv",

@@ -1,24 +1,8 @@
-# daohang
+# 黄同学的导航站
 
-## Project setup
-```
-npm install
-```
+界面设计完全仿照[南哪指南](https://github.com/idealclover/life-in-nju)[@idealclover](https://github.com/idealclover)
+所设计，仅是一个Vuejs的练手项目
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 使用到开源库
++ [VueClipboard](https://github.com/Inndy/vue-clipboard2) - A simple vue2 binding to clipboard.js
++ [Vuetify](https://github.com/vuetifyjs/vuetify) - Material Component Framework for Vue
