@@ -43,14 +43,41 @@
             <v-icon>mdi-plus</v-icon>
         </v-btn>
         <v-content>
+            <v-snackbar
+                    v-model="snackbarSwitch"
+                    color="rgba(38, 95, 250, 0.623)"
+                    :timeout="1500"
+            >
+                <v-alert
+                        class="snack-alert"
+                        type="info"
+                        dense
+                        color="rgba(0, 0, 0, 0)"
+                >
+                    搜索内容为空！
+                </v-alert>
+                <v-btn
+                        color="pink"
+                        text
+                        @click="snackbarSwitch = false"
+                >
+                    关闭
+                </v-btn>
+            </v-snackbar>
             <v-container>
-                <v-col align="center"> <v-img  class="engine" src="./assets/images/baidu-white.png" v-on="on"></v-img></v-col>
-                <v-input >
+                <v-col align="center">
+                    <v-img  class="engine" :src="currentUrlIcon" @click="changeEngine"></v-img>
+                </v-col>
+                <v-input
+                         background-color="rgba(0,0,0,0)"
+                >
                     <v-text-field
                             label="Search"
                             solo
+                            v-model="searchContent"
                             append-icon="mdi-search-web"
-                            @click:append="test()"
+                            @click:append="search()"
+                            @keyup.enter="enterPress()"
                     >
                     </v-text-field>
                 </v-input>
@@ -71,17 +98,52 @@
 import Website from "@/components/Website/Website";
 export default {
   name: 'App',
-
   components: {
     Website
   },
-
-  data: () => ({
+  computed:{
+    currentUrlIcon(){
+      return (this.engineSwitch) ? this.engines[0].logo : this.engines[1].logo
+    }
+  },
+  data(){
+    return{
       thisUrl: 'https://www.mahoo12138.cn/',
-  }),
+      engines: [
+          {
+            "url": 'https://www.baidu.com/s?wd=',
+            "logo": 'https://cdn.jsdelivr.net/gh/mahoo12138/vue3-nav-page/src/assets/images/baidu-white.png'
+          },
+          {
+            "url": 'https://www.google.com/search?q=',
+            "logo": 'https://cdn.jsdelivr.net/gh/mahoo12138/vue3-nav-page/src/assets/images/google-white.png'
+          }
+        ],
+      currentUrl: '',
+      engineSwitch: true,
+      snackbarSwitch: false,
+      searchContent: '',
+    }
+  },
   methods: {
-    test(){
-      console.log('search')
+    enterPress(){
+      console.log("按下回车")
+      this.search()
+    },
+    changeEngine(){
+        this.engineSwitch = ! this.engineSwitch
+        this.currentUrl =  (this.engineSwitch) ? this.engines[0].url : this.engines[1].url
+    },
+    search(){
+      if (this.searchContent === '') {
+        console.log(this.currentUrl)
+        this.snackbarSwitch = !this.snackbarSwitch
+      }else {
+        window.open(this.currentUrl + this.searchContent)
+        this.searchContent = ''
+      }
+
+
     },
     toGithub(){
       window.open('https://github.com/Mahoo12138/vue3-nav-page')
@@ -89,10 +151,12 @@ export default {
     onCopy(e){
       console.log(e.text)
     },
-
-    onError(){
-
+    onError(e){
+      console.log(e)
     },
+  },
+  created(){
+    this.currentUrl = this.engines[0].url
   }
 };
 </script>
@@ -110,16 +174,18 @@ export default {
         height: 100%;
         width: 100%;
     }
-    .fab-backtop{
-        top: 90%;
-        right: 2%;
-    }
     .content{
         margin-top: -30px;
     }
     .engine{
         width: 20%;
         margin: 20px;
+        cursor: pointer;
+
+    }
+    .snack-alert{
+        padding: 10px 0 0 0;
+        margin: 0 !important;
     }
     @media screen and (max-width: 500px) {
         .engine{

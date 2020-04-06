@@ -31,6 +31,19 @@ export default [
         "link": 'https://github.com/',
         "icon": 'https://gtms04.alicdn.com/tps/i4/TB1_oz6GVXXXXaFXpXXJDFnIXXX-64-64.ico'
       },
+      {
+        "title": 'SAKURA FRP',
+        "disc": '免费的内网穿透，MC开服用过，很赞',
+        "link": 'https://www.natfrp.com/',
+        "icon": 'https://www.natfrp.com/favicon.ico'
+      },
+      {
+        "title": '千千秀字',
+        "disc": '文本字符编码工具大全',
+        "link": 'https://www.qqxiuzi.cn/daohang.htm',
+        "icon": 'https://www.qqxiuzi.cn/favicon.ico'
+      },
+
     ]
   },
   {
